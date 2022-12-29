@@ -1,7 +1,11 @@
 #!/bin/bash
-echo "Введите ip-адрес"
+echo " ip address ?"
 read ip
-echo "Введите порт"
+echo " port ? "
 read port
-a='telnet "$ip $port"'
-echo $?
+a=$(nc -nz $ip $port)
+if [[ $? -eq 0 ]]; then
+        echo "$ip:$port open" >> /tmp/port.log; echo "$ip:$port open"
+else
+        echo "$ip:$port closed" >>/tmp/port.log; echo "$ip:$port closed"
+fi;
