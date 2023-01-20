@@ -5,7 +5,7 @@ division () {
    # return 0
   else
     echo "division by zero"
-    return 1
+    return 1 # команду выхода из функции  return используем для досрочного выхода из функции
    fi
 }
 division 4 2
@@ -16,7 +16,7 @@ echo $?
 division () {
   a=$1
   b=$2
-  return 1 # код возвпата return используем для досрочного выхода из функции
+  return 1 # команду выхода из функции  return используем для досрочного выхода из функции
   if [[ $b -ne 0 ]]; then
     echo "$1/$2 = $(($1/$2))"
   else
@@ -36,7 +36,7 @@ division () {
     echo "$1/$2 = $(($1/$2))"
   else
     echo "division by zero"
-    exit 11 #вышли из скрипта 
+    exit 11 #команду для выхода из скрипта exit используем для выхода из скрипта  
   fi
 }
 division 4 2
@@ -47,7 +47,7 @@ division 5 2
 echo $?
 
 #!/bin/bash
-exit 11#вышли в самом начале скрипта
+exit 11  #команду для выхода из скрипта exit используем для выхода  в самом начале 
 division () {
   a=$1
   b=$2
