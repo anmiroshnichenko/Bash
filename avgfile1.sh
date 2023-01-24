@@ -23,4 +23,4 @@ function avgfile () {
 #vgfile "$1"
 #avgfile /tmp
 avgfile /home/miroshnichenko
-exit 0
+#exit 0
